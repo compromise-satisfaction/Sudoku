@@ -241,6 +241,7 @@ function Load(width,height){
           }
           f++;
         }
+        /*
         for (var d = 0; d < 9; d++){
           for (var i = 1+d*9; i < 10+d*9; i++){
             var N = [0,0,0,0,0,0,0,0,0];
@@ -279,6 +280,7 @@ function Load(width,height){
             if(N[c] == 1) V[S[c]] = c+1;
           }
         }
+        */
         for (var i = 1; i < 82; i++){
           if(V[i-1]=="100000000") V[i-1] = 1;
           if(V[i-1]=="020000000") V[i-1] = 2;
