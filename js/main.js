@@ -104,12 +104,10 @@ function Load(width,height){
           }
         }
         if(Start.intersect(Hand)){
-          var V =  [5, 3, 0, 0, 7, 0, 0, 0, 0, 6, 0, 0, 1, 9, 5, 0, 0, 0, 0, 9, 8, 0, 0, 0, 0, 6, 0, 8, 0, 0, 0, 6, 0, 0, 0, 3, 4, 0, 0, 8, 0, 3, 0, 0, 1, 7, 0, 0, 0, 2, 0, 0, 0, 6, 0, 6, 0, 0, 0, 0, 2, 8, 0, 0, 0, 0, 4, 1, 9, 0, 0, 5, 0, 0, 0, 0, 8, 0, 0, 7, 9];
-          //*
+          var V = [];
           for (var i = 0; i < 81; i++){
             V[i] = Number[i+1].frame;
-          }//*///
-          //console.log(V);
+          }
           core.replaceScene(AnswerScene(V));
         }
       })
@@ -144,6 +142,14 @@ function Load(width,height){
           scene.addChild(this);
         }
       });
+
+      var label = new Label();
+        label.x = 0;
+        label.y = 470;
+        label.color = 'red';
+        label.font = '40px "Arial"';
+        label.text = ("");
+        scene.addChild(label);
 
       var I = 0;
       var K = 0;
@@ -303,7 +309,7 @@ function Load(width,height){
         Hand.y = e.y;
         for (var i = 1; i < 82; i++){
           if(Number[i].intersect(Hand)){
-            console.log(Number[i].a);
+            label.text = Number[i].a;
           }
         }
         if(Start.intersect(Hand)){
